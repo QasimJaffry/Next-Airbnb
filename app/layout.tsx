@@ -1,12 +1,11 @@
 import "./globals.css";
-import { Nunito } from "next/font/google";
-import Navbar from "./components/navbar/Navbar";
+
 import ClientOnly from "./components/ClientOnly";
-import Modal from "./components/modals/Modal";
+import LoginModal from "./components/modals/LoginModal";
+import Navbar from "./components/navbar/Navbar";
+import { Nunito } from "next/font/google";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToastProvider from "./providers/ToastProvider";
-
-// const inter = Inter({ subsets: ['latin'] })
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
         <ClientOnly>
           <ToastProvider />
           <RegisterModal />
-          {/* <Modal actionLabel="Submit" title={"Hello World"} isOpen={true} /> */}
+          <LoginModal />
           <Navbar />
         </ClientOnly>
 
